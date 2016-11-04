@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NMDatabaseManager.h"
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+{
+    NSMutableArray *allTask;
+}
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 
+
 @interface FirstViewController ()
 
 @end
@@ -17,11 +18,69 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    allTask = [[NSMutableArray alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [self reloadTask];
+}
+
+-(void)reloadTask {
+    
+    allTask = [[NMDatabaseManager sharedManager]getAllTask];
+    
+    if (allTask.count > 0) {
+        [self.tableView reloadData];
+    }
+    else {
+        NSLog(@"No Task Fetched");
+    }
+}
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return  1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return allTask.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    
+    NSString *taskString  = [allTask objectAtIndex:indexPath.row];
+    
+    NSLog(@"%@",taskString);
+    
+    cell.textLabel.text = taskString;
+    
+    return cell;
+}
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"Delete");
+    
+    NSString *task = [allTask objectAtIndex:indexPath.row];
+    
+    NSString *deleteQuery = [NSString stringWithFormat:@"DELETE FROM Task_Table WHERE TASK_ID ='%@'",task.uppercaseString];
+    
+    if([[NMDatabaseManager sharedManager]executeQuery:deleteQuery] == 1) {
+        
+        NSLog(@"Successfully Deleted");
+        [self reloadTask];
+    }
+    else {
+        NSLog(@"Failed To Delete Task");
+    }
+    
+}
+
 
 @end

@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NMDatabaseManager.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController<UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UITextField *myTextField;
 
+- (IBAction)ActionButton:(id)sender;
 
 @end
 
