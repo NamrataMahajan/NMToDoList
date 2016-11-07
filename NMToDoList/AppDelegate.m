@@ -17,6 +17,40 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+        NSString *sourcePath = [[NSBundle mainBundle]pathForResource:@"Namratamahajan" ofType:@"sqlite"];
+    NSLog(@"%@",sourcePath);
+        
+        NSString *destionationPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Namratamahajan.sqlite"];
+        
+        
+        NSLog(@"%@",destionationPath);
+        
+        if ([[NSFileManager defaultManager]fileExistsAtPath:sourcePath]) {
+            
+            if ([[NSFileManager defaultManager]fileExistsAtPath:destionationPath]) {
+                NSLog(@"DATABASE ALREADY COPIED!");
+            }
+            else {
+                
+                NSError *error;
+                
+                [[NSFileManager defaultManager]copyItemAtPath:sourcePath toPath:destionationPath error:&error];
+                
+                if (error) {
+                    NSLog(@"%@",error.localizedDescription);
+                }
+                else{
+                    NSLog(@"DATABASE COPIED!");
+                }
+                
+            }
+            
+        }
+        else {
+            NSLog(@"NO DATABASE IN BUNDLE");
+        }
+
     return YES;
 }
 

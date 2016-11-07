@@ -23,51 +23,44 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(void)saveTask {
     
     NSString *task = self.myTextField.text;
     
     if (task.length > 0) {
         
-        NSString *insertQuery = [NSString stringWithFormat:@"INSERT INTO Task_Table(TASK_ID,TASK) VALUES ('%@','%@')",task.uppercaseString,task];
+        NSString *insertQuery = [NSString stringWithFormat:@"INSERT INTO TASK_TABLE(TASK_ID,TASK) VALUES('%@','%@')",task.uppercaseString,task];
         
         NSLog(@"%@",insertQuery);
-        //     NSString *insertQuery = [NSString stringWithFormat:@"INSERT INTO TASK_TABLE(TASK_ID,TASK) VALUES ('%@','%@')",task.uppercaseString,task];
         
-        NSLog(@"%@",insertQuery);
         int result = [[NMDatabaseManager sharedManager]executeQuery:insertQuery];
+        
         if (result == 1) {
-            
-            NSLog(@"Successfully inserted Task");
-            
+            NSLog(@"Successfully inserted TASK");
         }
         else {
-            NSLog(@"Unable to insert task in SQLite DataBase");
-            
+            NSLog(@"Unable to insert task in SQLite Database");
         }
+        
         NSLog(@"Task Saved : %@",task);
         
         self.myTextField.text = @" ";
-        
     }
     else {
-        NSLog(@"Enter Task first to Save");
-        
+        NSLog(@"Enter Task First to Save.");
     }
     
-    [self.myTextField resignFirstResponder];
+    
+    
 }
+
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
     [textField resignFirstResponder];
-    
-    
-    
+    //[self saveTask];
     return YES;
 }
-
-
-
 
 - (IBAction)ActionButton:(id)sender {
     [self saveTask];

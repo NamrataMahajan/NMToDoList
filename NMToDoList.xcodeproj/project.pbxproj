@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		939357E51DCF4B020011E86F /* Namratamahajan.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 939357E41DCF4B020011E86F /* Namratamahajan.sqlite */; };
 		93BD343B1DCCF6A100BF5A15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BD343A1DCCF6A100BF5A15 /* main.m */; };
 		93BD343E1DCCF6A100BF5A15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BD343D1DCCF6A100BF5A15 /* AppDelegate.m */; };
 		93BD34411DCCF6A100BF5A15 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BD34401DCCF6A100BF5A15 /* FirstViewController.m */; };
@@ -14,12 +15,12 @@
 		93BD34471DCCF6A100BF5A15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93BD34451DCCF6A100BF5A15 /* Main.storyboard */; };
 		93BD34491DCCF6A100BF5A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93BD34481DCCF6A100BF5A15 /* Assets.xcassets */; };
 		93BD344C1DCCF6A100BF5A15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93BD344A1DCCF6A100BF5A15 /* LaunchScreen.storyboard */; };
-		93EB2F3A1DCCFE4C009F8ECD /* NamMahajan.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 93EB2F391DCCFE4C009F8ECD /* NamMahajan.sqlite */; };
 		93EB2F401DCCFF45009F8ECD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 93EB2F3F1DCCFF45009F8ECD /* libsqlite3.tbd */; };
 		93EB2F491DCD0011009F8ECD /* NMDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB2F481DCD0011009F8ECD /* NMDatabaseManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		939357E41DCF4B020011E86F /* Namratamahajan.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Namratamahajan.sqlite; sourceTree = "<group>"; };
 		93BD34361DCCF6A100BF5A15 /* NMToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BD343A1DCCF6A100BF5A15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93BD343C1DCCF6A100BF5A15 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,7 +33,6 @@
 		93BD34481DCCF6A100BF5A15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93BD344B1DCCF6A100BF5A15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93BD344D1DCCF6A100BF5A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93EB2F391DCCFE4C009F8ECD /* NamMahajan.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = NamMahajan.sqlite; sourceTree = "<group>"; };
 		93EB2F3F1DCCFF45009F8ECD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		93EB2F471DCD0011009F8ECD /* NMDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMDatabaseManager.h; sourceTree = "<group>"; };
 		93EB2F481DCD0011009F8ECD /* NMDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMDatabaseManager.m; sourceTree = "<group>"; };
@@ -70,12 +70,12 @@
 		93BD34381DCCF6A100BF5A15 /* NMToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				93EB2F391DCCFE4C009F8ECD /* NamMahajan.sqlite */,
 				93BD343C1DCCF6A100BF5A15 /* AppDelegate.h */,
+				939357E41DCF4B020011E86F /* Namratamahajan.sqlite */,
 				93BD343D1DCCF6A100BF5A15 /* AppDelegate.m */,
-				93BD343F1DCCF6A100BF5A15 /* FirstViewController.h */,
 				93EB2F471DCD0011009F8ECD /* NMDatabaseManager.h */,
 				93EB2F481DCD0011009F8ECD /* NMDatabaseManager.m */,
+				93BD343F1DCCF6A100BF5A15 /* FirstViewController.h */,
 				93BD34401DCCF6A100BF5A15 /* FirstViewController.m */,
 				93BD34421DCCF6A100BF5A15 /* SecondViewController.h */,
 				93BD34431DCCF6A100BF5A15 /* SecondViewController.m */,
@@ -154,7 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93BD344C1DCCF6A100BF5A15 /* LaunchScreen.storyboard in Resources */,
-				93EB2F3A1DCCFE4C009F8ECD /* NamMahajan.sqlite in Resources */,
+				939357E51DCF4B020011E86F /* Namratamahajan.sqlite in Resources */,
 				93BD34491DCCF6A100BF5A15 /* Assets.xcassets in Resources */,
 				93BD34471DCCF6A100BF5A15 /* Main.storyboard in Resources */,
 			);

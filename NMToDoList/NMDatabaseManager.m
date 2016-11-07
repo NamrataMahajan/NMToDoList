@@ -21,7 +21,7 @@
 }
 -(NSString *)getDatabasePath {
     
-    return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/DPDatabase.sqlite"];
+    return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Namratamahajan.sqlite"];
 }
 -(int)executeQuery:(NSString *)query {
     
@@ -37,11 +37,20 @@
         
         if(sqlite3_prepare_v2(myDB,UTFquery,-1,&statement,NULL) == SQLITE_OK) {
             
-            if(sqlite3_step(statement) == SQLITE_DONE) {
+              if(sqlite3_step(statement) == SQLITE_DONE) {
+                  
                 
                 success = 1;
-            }
+              }else {
+                  NSLog(@"%s",sqlite3_errmsg(myDB));
+              }
         }
+        else {
+            NSLog(@"%s",sqlite3_errmsg(myDB));
+        }
+    }
+    else {
+        NSLog(@"%s",sqlite3_errmsg(myDB));
     }
     
     sqlite3_close(myDB);
@@ -53,7 +62,7 @@
     
     sqlite3_stmt *statement;
     
-    NSString *query = @"SELECT TASK FROM Task_Table";
+    NSString *query = @"SELECT TASK FROM TASK_TABLE";
     
     const char *UTFquery = [query UTF8String];
     const char *UTFDatabasePath = [[self getDatabasePath]UTF8String];

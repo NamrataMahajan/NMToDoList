@@ -56,8 +56,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlj-xw-1FL">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlj-xw-1FL">
                                 <rect key="frame" x="220" y="350" width="160" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="ActionButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="a9D-AN-fNe"/>
@@ -78,16 +79,25 @@
                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="i8i-C8-zu9" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="Lqa-UY-b1x"/>
+                            <constraint firstItem="Jlj-xw-1FL" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="M7I-nO-0l2"/>
                             <constraint firstItem="i8i-C8-zu9" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="80" id="TBW-0L-Xor"/>
+                            <constraint firstItem="i8i-C8-zu9" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="80" id="YxB-qb-Dh6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i8i-C8-zu9" secondAttribute="trailing" constant="80" id="dfF-Ei-ZJp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jlj-xw-1FL" secondAttribute="trailing" constant="200" id="ean-Qq-Lfn"/>
                             <constraint firstItem="Jlj-xw-1FL" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="200" id="fom-Wk-bEY"/>
                             <constraint firstItem="Jlj-xw-1FL" firstAttribute="top" secondItem="i8i-C8-zu9" secondAttribute="bottom" constant="30" id="j9h-46-N01"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ean-Qq-Lfn"/>
+                                <exclude reference="fom-Wk-bEY"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="mytextField" destination="Lqa-UY-b1x" id="ipV-jQ-0gF"/>
+                        <outlet property="myTextField" destination="i8i-C8-zu9" id="AXY-HH-M3R"/>
+                        <outlet property="saveButton" destination="Jlj-xw-1FL" id="8UB-tt-hmz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
